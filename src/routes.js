@@ -3,6 +3,7 @@ import { Router, Stack, Scene } from 'react-native-router-flux';
 import Login from './components/login/login';
 import Signup from './components/signup/signup';
 
+/* eslint-disable react/prefer-stateless-function */
 export default class Routes extends Component {
   render() {
     return (

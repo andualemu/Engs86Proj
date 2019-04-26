@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import {
   StyleSheet,
   View, Image, Text,
@@ -7,8 +10,9 @@ import {
   TextInput,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
-export default class Signup extends Component {
+import { signupUser } from '../../actions/index';
+/* eslint-disable react/destructuring-assignment */
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,12 +23,12 @@ export default class Signup extends Component {
     };
   }
 
-  login = () => {
-    console.log(this.state);
-  }
-
   goToLoginScreen = () => {
     Actions.login();
+  }
+
+  registerUser = () => {
+    this.props.signupUser(this.state);
   }
 
   render() {
@@ -84,7 +88,7 @@ export default class Signup extends Component {
               value={this.state.password}
               onChangeText={password => this.setState({ password })}
             />
-            <TouchableOpacity onPress={this.login} style={styles.buttonContianer}>
+            <TouchableOpacity onPress={this.registerUser} style={styles.buttonContianer}>
               <Text style={styles.buttonText}> REGISTER </Text>
             </TouchableOpacity>
           </View>
@@ -99,6 +103,18 @@ export default class Signup extends Component {
     );
   }
 }
+
+const mapDispatchToProps = {
+  signupUser,
+};
+
+function mapStateToProps(state) {
+  return {
+    auth: state.authenticated,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 
 const styles = StyleSheet.create({
   container: {
