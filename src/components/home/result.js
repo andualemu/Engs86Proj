@@ -4,7 +4,7 @@ import {
   View,
   Text,
   ScrollView,
-  TouchableOpacity,
+  Button,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
@@ -35,6 +35,11 @@ class Result extends Component {
     return (
       <View>
         <Text>Result: {this.state.result}/10</Text>
+        <Button
+          onPress={Actions.Nav}
+          title="Go back to Home."
+          color="#841584"
+        />
       </View>
     );
   }

@@ -11,6 +11,7 @@ export const ActionTypes = {
   FETCH_QUESTIONS: 'FETCH_QUESTIONS',
 
   FETCH_PROFILE: 'FETCH_PROFILE',
+  FETCH_LEADERBOARD: 'FETCH_LEADERBOARD',
   AUTH_USER: 'AUTH_USER',
   DEAUTH_USER: 'DEAUTH_USER',
   AUTH_ERROR: 'AUTH_ERROR',
@@ -186,4 +187,19 @@ export function updateUserScore(id, newScore) {
     .catch(((err) => {
       console.error('err', err.response.data);
     }));
+}
+
+export function getLeaderboard() {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/leaderboard`)
+      .then((response) => {
+        dispatch({
+          type: ActionTypes.FETCH_LEADERBOARD,
+          payload: response.data,
+        });
+      })
+      .catch(((err) => {
+        console.error('err', err.response.data);
+      }));
+  };
 }
