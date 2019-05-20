@@ -24,6 +24,7 @@ class Signup extends Component {
   }
 
   goToLoginScreen = () => {
+    console.log(this.props.tok, this.props.auth);
     Actions.login();
   }
 
@@ -110,7 +111,8 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    auth: state.authenticated,
+    auth: state.auth.authenticated,
+    tok: state.auth.token,
   };
 }
 

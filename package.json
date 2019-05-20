@@ -8,14 +8,21 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "native-base": "^2.12.1",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
-    "react-native": "0.59.3",
+    "react-native": "^0.59.6",
+    "react-native-card-flip": "^1.0.4",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-hamburger": "0.0.2",
     "react-native-router-flux": "^4.0.6",
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "^3.9.1",
     "react-redux": "^7.0.2",
     "redux": "^4.0.1",
     "redux-axios-middleware": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "watchman": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.0",
