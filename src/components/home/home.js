@@ -29,7 +29,6 @@ class Home extends Component {
     return (
       <ScrollView style={styles.scrollview}>
         <View style={styles.container}>
-
           <TouchableOpacity style={styles.user_summary_container}>
             <Icon style={styles.user_icon} name="account-circle" size={100} />
             <View style={styles.user_info}>
@@ -54,7 +53,7 @@ class Home extends Component {
             </TouchableOpacity>
             <TouchableOpacity style={styles.quiz_tile}>
               <Image source={require('../../images/Geometry.png')} style={styles.quiz_image} />
-              <Text style={styles.quiz_text}>Mathimatics</Text>
+              <Text style={styles.quiz_text}>Mathematics</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quiz_tile}>
               <Image source={require('../../images/Alien.png')} style={styles.quiz_image} />

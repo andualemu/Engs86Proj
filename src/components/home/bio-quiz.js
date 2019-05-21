@@ -36,19 +36,23 @@ class Biology extends Component {
   }
 
   nextQuestion = () => {
-    this.setState({
-      aRed: false,
-      bRed: false,
-      cRed: false,
-      dRed: false,
-      aGreen: false,
-      bGreen: false,
-      cGreen: false,
-      dGreen: false,
-      answered: false,
-      qno: this.state.qno + 1,
-    });
-    this.card.flip();
+    if (this.state.qno === 9) {
+      Actions.result();
+    } else {
+      this.setState({
+        aRed: false,
+        bRed: false,
+        cRed: false,
+        dRed: false,
+        aGreen: false,
+        bGreen: false,
+        cGreen: false,
+        dGreen: false,
+        answered: false,
+        qno: this.state.qno + 1,
+      });
+      this.card.flip();
+    }
   }
 
   // highlightChoice(choiceLetter)

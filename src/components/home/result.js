@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
-  ScrollView,
+  Image,
   Button,
 } from 'react-native';
 import { connect } from 'react-redux';
@@ -33,11 +33,13 @@ class Result extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Result: {this.state.result}/10</Text>
+      <View style={styles.container}>
+        <Text style={styles.congrats_text}>Magic Card Completed!</Text>
+        <Text style={styles.result_text}>{this.state.result}/10</Text>
+        <Image style={styles.image_style} source={require('../../images/graduate.png')} />
         <Button
           onPress={Actions.Nav}
-          title="Go back to Home."
+          title="Go back to Home"
           color="#841584"
         />
       </View>
@@ -46,7 +48,30 @@ class Result extends Component {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#483B5A',
+  },
+  congrats_text: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  result_text: {
+    borderWidth: 2,
+    borderColor: 'black',
+    borderRadius: 100,
+    padding: 20,
+    fontSize: 40,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  image_style: {
+    height: '45%',
+  },
 });
 
 function mapStateToProps(state) {
