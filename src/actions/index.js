@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AsyncStorage } from 'react-native';
 
-const ROOT_URL = 'http://10.0.2.2:9090/api';
+const ROOT_URL = 'https://engs86proj-api.herokuapp.com/api';
 const API_KEY = '';
 // const ROOT_URL = 'https://national-quiz-api.herokuapp.com/api';
 

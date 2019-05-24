@@ -101,16 +101,16 @@ class Biology extends Component {
       <View style={styles.question}>
         <Text style={styles.question_text}>{this.state.qno + 1}. { question.question }</Text>
         <View style={styles.question_choices}>
-          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.aRed ? styles.redButton : styles.normal, this.state.aGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[0].a, 'a')}>
+          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.aRed ? styles.redButton : styles.normal, this.state.aGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[this.state.qno].a, 'a')}>
             <Text style={styles.choice_text}>{ question.a }</Text>
           </TouchableOpacity>
-          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.bRed ? styles.redButton : styles.normal, this.state.bGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[0].b, 'b')}>
+          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.bRed ? styles.redButton : styles.normal, this.state.bGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[this.state.qno].b, 'b')}>
             <Text style={styles.choice_text}>{ question.b }</Text>
           </TouchableOpacity>
-          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.cRed ? styles.redButton : styles.normal, this.state.cGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[0].c, 'c')}>
+          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.cRed ? styles.redButton : styles.normal, this.state.cGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[this.state.qno].c, 'c')}>
             <Text style={styles.choice_text}>{ question.c }</Text>
           </TouchableOpacity>
-          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.dRed ? styles.redButton : styles.normal, this.state.dGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[0].d, 'd')}>
+          <TouchableOpacity disabled={this.state.answered} style={[styles.buttonStyle, this.state.dRed ? styles.redButton : styles.normal, this.state.dGreen ? styles.greenButton : styles.normal]} onPress={() => this.checkAnswer(questions[this.state.qno].d, 'd')}>
             <Text style={styles.choice_text}>{ question.d }</Text>
           </TouchableOpacity>
         </View>
@@ -125,7 +125,7 @@ class Biology extends Component {
     }
     return (
       <View style={styles.question}>
-        <Text style={styles.question_text}>Answer: { questions[this.state.qno].answer }{'\n'}{'\n'}{ questions[0].explanation }</Text>
+        <Text style={styles.question_text}>Answer: { questions[this.state.qno].answer }{'\n'}{'\n'}{ questions[this.state.qno].explanation }</Text>
       </View>
     );
   }
